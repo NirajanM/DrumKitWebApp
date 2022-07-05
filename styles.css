@@ -60,7 +60,7 @@ footer {
 }
 
 .pressed {
-  box-shadow: 0 3px 4px 0 var(--white);
+  box-shadow: 0 0 8px 2px var(--white);
   opacity: 0.5;
 }
 

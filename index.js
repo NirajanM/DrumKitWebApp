@@ -2,8 +2,13 @@ let drum = document.querySelectorAll(".drum");
 for(let i=0 ; i<drum.length ; i++){
     drum[i].addEventListener("click",()=>{
         addSound(drum[i].innerHTML);
+        changeColor(drum[i].innerHTML);
     })
 }
+document.addEventListener("keypress",(event)=>{
+    addSound(event.key);
+    changeColor(event.key);
+})
 function addSound(key){
     switch(key){
         case "a":
@@ -35,6 +40,12 @@ function addSound(key){
             let audio6 = new Audio("./sounds/kick-bass.mp3");
             audio6.play();
             break;
+        default:
+            console.log(key);
       
     }
+}
+function changeColor(key){
+    document.querySelector("."+ key).classList.add("pressed");
+    setTimeout( ()=>{ document.querySelector("." + key).classList.remove("pressed")}, 100); 
 }
